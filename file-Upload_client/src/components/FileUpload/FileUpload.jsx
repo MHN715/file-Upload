@@ -16,7 +16,7 @@ const FileUpload = () => {
   // const [fileLink, setFileLink] = useState([]);
   const { setUploadPercentage, setFileLinks } = useContext(ContextStates);
 
-  console.log(submitted);
+  // console.log(submitted);
 
   const onChange = (e) => {
     setFiles(e.target.files);
@@ -24,18 +24,18 @@ const FileUpload = () => {
 
   useEffect(() => {
     if (files.length > 0) {
-      console.log("files uploaded");
+      // console.log("files uploaded");
       setFilesInInput(true);
     } else {
-      console.log("no files in input");
+      // console.log("no files in input");
       setFilesInInput(false);
     }
   }, [files]);
 
-  console.log(typeof files, files);
-  Object.entries(files).map((entry) => {
-    return console.log(entry[1].name);
-  });
+  // console.log(typeof files, files);
+  // Object.entries(files).map((entry) => {
+  //   return console.log(entry[1].name);
+  // });
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -63,7 +63,7 @@ const FileUpload = () => {
         }
       );
 
-      console.log(res);
+      // console.log(res);
       // Clear percentage
       setTimeout(() => setUploadPercentage(0), 500);
       setFilesInInput(false);
@@ -86,7 +86,7 @@ const FileUpload = () => {
       setUploadPercentage(0);
     }
 
-    console.log("test222222222222222222");
+    // console.log("test222222222222222222");
   };
 
   return (
