@@ -46,18 +46,22 @@ const FileUpload = () => {
     }
     setSubmitted(true);
     try {
-      const res = await axios.post("http://localhost:3020/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        onUploadProgress: (progressEvent) => {
-          setUploadPercentage(
-            parseInt(
-              Math.round((progressEvent.loaded * 100) / progressEvent.total)
-            )
-          );
-        },
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_HOST}:${import.meta.env.VITE_PORT}/upload`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          onUploadProgress: (progressEvent) => {
+            setUploadPercentage(
+              parseInt(
+                Math.round((progressEvent.loaded * 100) / progressEvent.total)
+              )
+            );
+          },
+        }
+      );
 
       console.log(res);
       // Clear percentage
