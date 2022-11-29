@@ -24,16 +24,16 @@ export default function LinksToCopy() {
     }
   }
 
-  useEffect(() => {
-    if (fileLinks.length < 1) return;
-    console.log("links received");
-  }, [fileLinks]);
+  // useEffect(() => {
+  //   if (fileLinks.length < 1) return;
+  //   console.log("links received");
+  // }, [fileLinks]);
 
   return (
     <div
       className="links-to-copy"
       onLoadedData={() => {
-        console.log("blur");
+        // console.log("blur");
       }}
     >
       <h3>Your links:</h3>
